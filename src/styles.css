@@ -1,0 +1,250 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 3rem;
+    background-color: #ffffff;
+    list-style: none;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 6fr 1fr 1fr;
+    background-color: white;
+    padding: 1rem;
+    width: 100%;
+    list-style: none;
+}
+
+.search {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    background-color: #f1f4ff;
+    border-radius: 6px;
+    padding: 1rem;
+    width: 100%;
+    list-style: none;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    background-color: white;
+    border-radius: 4px;
+    padding: 1rem;
+    list-style: none;
+}
+
+.listcontainer {
+    border-style: solid;
+    border-width: 1px;
+    box-sizing: border-box;
+    border-color: #000000;
+}
+
+.input {
+    width: inherit;
+}
+
+.tableh {
+    background-color: #f1f4ff;
+    padding: 1rem;
+    width: 100%;
+    list-style: none;
+}
+
+.modal1 {
+    display: grid;
+    text-align: start;
+}
+
+.container {
+    list-style: none;
+    width: 100%;
+}
+
+.select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font: inherit;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    border-radius: 2px;
+    background-color: #ffffff;
+    color: black;
+    border: 1px solid #000000;
+    margin: 0 1rem;
+}
+
+.select1 {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font: inherit;
+    padding: 5px 20px 5px 20px;
+    cursor: pointer;
+    border-radius: 2px;
+    background-color: #ffffff;
+    color: black;
+    border: 1px solid #000000;
+}
+
+h1,
+h2 {
+    color: #333333;
+}
+
+.btn {
+    font: inherit;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #2277e0;
+    color: #ffffff;
+    border: 1px solid #000000;
+    text-align: center;
+    display: inline-flex;
+}
+
+.btnmodal {
+    font: inherit;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #e83d6d;
+    color: #ffffff;
+    border: 1px solid #000000;
+    text-align: center;
+    display: inline-flex;
+}
+
+.btn:hover {
+    background-color: #2277e0;
+    border-color: #ffffff;
+}
+
+.btnmodal:hover {
+    background-color: #e83d6d;
+    border-color: #ffffff;
+}
+
+.btn--altmodal {
+    background-color: #e8e8e8;
+    color: #8d9ebd;
+}
+
+.btn--alt {
+    background-color: transparent;
+    color: #000000;
+}
+
+.btn--alt:hover {
+    background-color: #f8dae9;
+}
+
+.btnmodal--alt:hover {
+    background-color: #f8dae9;
+}
+
+.card {
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    width: 80%;
+    list-style: none;
+}
+
+.headertable {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    justify-content: space-between;
+    background-color: #e4eafd;
+    border-radius: 6px;
+    padding: 1rem;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.table {
+    background-color: white;
+    border-radius: 4px;
+    padding: 1rem;
+    width: 100%;
+    list-style: none;
+}
+
+.actions {
+    text-align: right;
+}
+
+.Urgent {
+    background-color: #e83d6d;
+    width: 27%;
+    font-size: small;
+    text-align: center;
+    color: white;
+    border-style: solid;
+    border-radius: 6px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.Regular {
+    background-color: #f1a824;
+    width: 27%;
+    font-size: small;
+    text-align: center;
+    color: white;
+    border-style: solid;
+    border-radius: 6px;
+    /* padding-inline: 10px; */
+    font-weight: bold;
+    padding: 5px;
+}
+
+.Trivial {
+    background-color: #2277e0;
+    width: 27%;
+    font-size: small;
+    text-align: center;
+    color: white;
+    border-style: solid;
+    border-radius: 6px;
+    /* padding-inline: 10px; */
+    font-weight: bold;
+    padding: 5px;
+}
+
+.modal {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    background-color: white;
+    padding: 2rem;
+    text-align: center;
+    width: 30rem;
+    z-index: 10;
+    position: fixed;
+    top: 20vh;
+    left: calc(50% - 15rem);
+}
+
+.actions {
+    background-color: #e8e8e8;
+    width: fit-content;
+    text-align: center;
+    display: inline-block;
+    padding: 5px;
+    margin: 1px;
+}
+
+.backdrop {
+    position: fixed;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
