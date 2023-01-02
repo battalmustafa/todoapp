@@ -84,7 +84,7 @@ const Search = () => {
             const filteredTitle = filteredData.filter(
               (data) => data.priority.indexOf(selectedTitle) !== -1
             );            
-
+console.log(selectedTitle);
             return filteredTitle;
             
           };
@@ -98,17 +98,18 @@ const Search = () => {
                
         
             
-            
+                     // eslint-disable-next-line react-hooks/exhaustive-deps 
           }, [selectedTitle]);
          
           useEffect(()=> {
-         
-            dispatch(filter(FilteredList));
+            dispatch(filter(FilteredList));       
+         // eslint-disable-next-line react-hooks/exhaustive-deps 
           }, [FilteredList]);
           
           useEffect(()=> {
          
-            dispatch(sort(sortedList));
+           dispatch(sort(sortedList));        
+                 // eslint-disable-next-line react-hooks/exhaustive-deps 
           }, [sortedList]);
           
           
@@ -117,8 +118,7 @@ const Search = () => {
           searchedList =  FilteredList.filter( (data) => data.title.toLowerCase().includes(query));
 
         useEffect(()=> {
-          
-       
+                   // eslint-disable-next-line react-hooks/exhaustive-deps        
           searchedList =  arr.filter( (data) => data.title.toLowerCase().includes(query));
           dispatch(search(searchedList));
         }, [query]);

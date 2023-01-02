@@ -64,7 +64,7 @@ itemTitle = setitemTitle(id.title);
   <div>Actions</div>
                 </div>
                 <div className="listcontainer">
-    <li>
+    <ul>
       {todos.todoList.map((todo) => {
         const { id, title, priority} = todo;
 
@@ -114,7 +114,7 @@ itemTitle = setitemTitle(id.title);
         );
       })}
        
-    </li>
+    </ul>
     </div>
     </div>
   );
