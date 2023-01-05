@@ -58,6 +58,8 @@ export const todoSlice = createSlice({
                     if (todo.id === action.payload) {
                         todoListArr.splice(index, 1);
                         console.log(todo.id);
+                        todoListArr.sort((a, b) => (priorities.indexOf(a.priority) - priorities.indexOf(b.priority)));
+
                     }
                 });
                 window.localStorage.setItem('todoList', JSON.stringify(todoListArr));
@@ -71,7 +73,9 @@ export const todoSlice = createSlice({
                 todoListArr.forEach((todo) => {
                     if (todo.id === action.payload.id) {
                         todo.priority = action.payload.priority
-                            // todo.title = action.payload.title;
+                        todoListArr.sort((a, b) => (priorities.indexOf(a.priority) - priorities.indexOf(b.priority)));
+
+                        // todo.title = action.payload.title;
 
                     }
                 });
