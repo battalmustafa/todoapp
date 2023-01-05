@@ -1,8 +1,8 @@
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { filter, search,sort } from "./TodoSlice";
 const Search = () => {
-  const dispatch = useDispatch();
+      const dispatch = useDispatch();
  
     const options = [
         {
@@ -41,7 +41,7 @@ const Search = () => {
       ];
 
   
-      const [query, setQuery] = useState("");
+     // const [query, setQuery] = useState("");
       
       
     
@@ -53,8 +53,7 @@ const Search = () => {
         const [selectedTitle, setSelectedTitle] = useState("");   
         let [sortedList, setSortedList] = useState(todoListArr);   
 
-        const [FilteredList, setFilteredList] = useState(todoListArr); 
-
+        let [FilteredList, setFilteredList] = useState(todoListArr); 
 
         const priorities = ['Urgent', 'Regular', 'Trivial'];
       
@@ -63,101 +62,68 @@ const Search = () => {
         //console.log(arr);
 
         const handleTitleChange = (event) => {
-            setSelectedTitle(event.target.value);
-            
-            
-          };
-         
-          const FilterByTitle = (filteredData) => {
-            if (!selectedTitle) {
-              return filteredData;
-            }
-           if(selectedTitle === 'Sort by Name'){
+                    
+          setSelectedTitle(event.target.value);
+          console.log(selectedTitle);
+          
+
+          if(event.target.value === 'Sort by Name'){
                sortedList = [...arr].sort((a, b) =>
               a.title > b.title ? 1 : -1,);
               setSortedList(sortedList);
               console.log(arr);
                 console.log(sortedList);
+                dispatch(sort(sortedList)); 
             
            }
-        
-            const filteredTitle = filteredData.filter(
-              (data) => data.priority.indexOf(selectedTitle) !== -1
-            );            
-console.log(selectedTitle);
-            return filteredTitle;
+        else{
+             FilteredList = arr.filter(
+              (data) => data.priority.indexOf(event.target.value) !== -1
+            );  
+            setFilteredList(FilteredList)
+            console.log( FilteredList);    
+               
+            dispatch(filter(FilteredList));       
+   
             
           };
                        
-
-        useEffect(() => {
-           
-             
-              var filteredData = FilterByTitle(todoListArr);
-              setFilteredList(filteredData);
-               
         
+      };     
+      const handleSearch = (query) => {
+
+console.log(query);
+const  searchedList =  arr.filter( (data) => data.title.toLowerCase().includes(query));
+console.log(searchedList);
+dispatch(search(searchedList));
+      }
+          
+          //  const  searchedList =  arr.filter( (data) => data.title.toLowerCase().includes(query));
+          return(
+    
+            <div className="search">
+         
+         
             
-                     // eslint-disable-next-line react-hooks/exhaustive-deps 
-          }, [selectedTitle]);
-         
-          useEffect(()=> {
-            dispatch(filter(FilteredList));       
-         // eslint-disable-next-line react-hooks/exhaustive-deps 
-          }, [FilteredList]);
-          
-          useEffect(()=> {
-         
-           dispatch(sort(sortedList));        
-                 // eslint-disable-next-line react-hooks/exhaustive-deps 
-          }, [sortedList]);
-          
-          
-      let searchedList = [];
-       
-          searchedList =  FilteredList.filter( (data) => data.title.toLowerCase().includes(query));
-
-        useEffect(()=> {
-                   // eslint-disable-next-line react-hooks/exhaustive-deps        
-          searchedList =  arr.filter( (data) => data.title.toLowerCase().includes(query));
-          dispatch(search(searchedList));
-        }, [query]);
-       
         
-  
-       
- 
- 
-
- //console.log(FilteredList);
-
-
-
-    return(
-    
-        <div className="search">
-     
-     
-        
-    
-           <input 
-           className="input"
-           type="text" 
-                
-                 placeholder="Job Name" 
-                onChange={(e) => setQuery(e.target.value)} 
-                 />
-                  
-            <select 
-          value={selectedTitle}
-          onChange={handleTitleChange}
-             className="select"  >
-            {options.map((option) => (
-              <option key={option.value} value={option.value}>{option.label}</option>
-            ))}
-          </select>
-        </div>
-    )
-};
+               <input 
+               className="input"
+               type="text" 
+                    
+                     placeholder="Job Name" 
+                    onChange={(e) => handleSearch(e.target.value)} 
+                     />
+                      
+                <select 
+              value={selectedTitle}
+              onChange={handleTitleChange}
+                 className="select"  >
+                {options.map((option) => (
+                  <option key={option.value} value={option.value}>{option.label}</option>
+                ))}
+              </select>
+            </div>
+        )
+};         
 
 export default Search;
