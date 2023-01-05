@@ -46,9 +46,10 @@ const Search = () => {
       
     
         const todoList = window.localStorage.getItem('todoList');
-
-       const todoListArr = JSON.parse(todoList);
-        
+        let todoListArr =[];
+if(todoList){todoListArr = JSON.parse(todoList);
+  console.log(todoListArr,todoList);}
+       
         
         const [selectedTitle, setSelectedTitle] = useState("");   
         let [sortedList, setSortedList] = useState(todoListArr);   
