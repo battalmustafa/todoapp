@@ -1,3 +1,13 @@
+Basic Todo App 
+Features :  -adding tasks and tasks priority
+            -filtering tasks priorities
+            -default sort by priorities and sort by name
+            -delete task
+            -update task priority
+            -holds datas in webstorage
+
+Demo Link : https://glistening-bublanina-1314c9.netlify.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
