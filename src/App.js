@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector, } from "react-redux";
-import TodoForm from "./TodoForm";
-import TodoList from "./TodoList";
-import Search from "./Search";
+import TodoForm from "./components/TodoForm";
+import TodoList from "./components/TodoList";
+import Search from "./components/Search";
 
 const App = () => {
 

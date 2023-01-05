@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import {
  
   remove, updateTodo,
-} from "./TodoSlice";
+} from "../slice/TodoSlice";
 import { useState } from "react";
 import { FiEdit2, FiTrash2 } from "react-icons/fi";
 import DeleteModal from "./DeleteModal";

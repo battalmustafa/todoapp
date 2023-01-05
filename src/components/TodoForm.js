@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { add } from "./TodoSlice";
+import { add } from "../slice/TodoSlice";
 import uuid from "react-uuid";
 import { FiPlus } from "react-icons/fi";
 

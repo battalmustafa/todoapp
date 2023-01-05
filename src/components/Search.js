@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { filter, search,sort } from "./TodoSlice";
+import { filter, search,sort } from "../slice/TodoSlice";
 const Search = () => {
       const dispatch = useDispatch();
  

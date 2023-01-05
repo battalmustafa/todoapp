@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { updateTodo } from "./TodoSlice";
+import { updateTodo } from "../slice/TodoSlice";
 
 const options = [
   {
