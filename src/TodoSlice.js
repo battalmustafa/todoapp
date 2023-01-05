@@ -17,7 +17,7 @@ const initialValue = {
 
     todoList: getInitialTodo(),
 };
-
+const priorities = ['Urgent', 'Regular', 'Trivial'];
 
 
 export const todoSlice = createSlice({
@@ -29,18 +29,24 @@ export const todoSlice = createSlice({
             const todoList = window.localStorage.getItem('todoList');
             if (todoList) {
                 const todoListArr = JSON.parse(todoList);
+
                 todoListArr.push({
                     ...action.payload,
                 });
+                todoListArr.sort((a, b) => (priorities.indexOf(a.priority) - priorities.indexOf(b.priority)));
+
 
                 window.localStorage.setItem('todoList', JSON.stringify(todoListArr));
+                state.todoList = todoListArr;
             } else {
+
                 window.localStorage.setItem(
                     'todoList',
                     JSON.stringify([{
                         ...action.payload,
                     }, ])
                 );
+
             }
         },
         remove: (state, action) => {

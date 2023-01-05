@@ -47,8 +47,10 @@ const Search = () => {
     
         const todoList = window.localStorage.getItem('todoList');
         let todoListArr =[];
-if(todoList){todoListArr = JSON.parse(todoList);
-  console.log(todoListArr,todoList);}
+if(todoList){
+  todoListArr = JSON.parse(todoList);
+  console.log(todoListArr,todoList);
+}
        
         
         const [selectedTitle, setSelectedTitle] = useState("");   
@@ -60,6 +62,7 @@ if(todoList){todoListArr = JSON.parse(todoList);
       
         
         let arr = todoListArr.sort( (a, b) => (priorities.indexOf(a.priority) - priorities.indexOf(b.priority)));
+        //dispatch(sort(arr));
         //console.log(arr);
 
         const handleTitleChange = (event) => {
